@@ -1,0 +1,5 @@
+elgato==4.0.1
+PySide6==6.7.1
+setuptools==68.2.2
+phue==1.1
+psutil==5.9.6
