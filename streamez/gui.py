@@ -25,6 +25,7 @@ class SystemTrayApp(Application):
         self.start_action = self.add_action("Start", self.on_start_button_clicked)
         self.stop_action = self.add_action("Stop", self.on_stop_button_clicked)
         self.reload_action = self.add_action("Reload", self.on_reload_button_clicked)
+        self.menu.addSeparator()
         self.exit_action = self.add_action("Exit", self.on_exit_button_clicked)
 
         # Set the menu to the tray icon
