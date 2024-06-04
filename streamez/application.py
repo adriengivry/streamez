@@ -1,5 +1,3 @@
-from enum import Enum
-
 from streamez.services.elgato import ElgatoService
 from streamez.services.hue import HueService
 from streamez.services.obs import OBSService

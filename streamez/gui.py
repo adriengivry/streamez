@@ -1,16 +1,14 @@
-import asyncio
 import sys
+import os
+import subprocess
 
-from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QMessageBox
+from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
 from PySide6.QtGui import QIcon, QAction
-from PySide6.QtCore import QTimer
 
 from streamez.application import Application
 from streamez.logging import Log
 from streamez.settings import Settings
 from streamez.utils import Utils, ServiceManagerState
-import os
-import subprocess
 
 class SystemTrayApp(Application):
     def __init__(self):

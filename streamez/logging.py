@@ -1,5 +1,3 @@
-from enum import Enum
-
 from streamez.settings import Settings
 from PySide6.QtWidgets import QMessageBox
 

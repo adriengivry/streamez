@@ -1,7 +1,7 @@
 import os
 import subprocess
-
 import psutil
+
 from streamez.logging import Log
 from streamez.services.service import IService
 from streamez.settings import Settings

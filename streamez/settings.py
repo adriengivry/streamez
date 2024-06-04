@@ -1,5 +1,6 @@
 import os
 import json
+
 from streamez.utils import Utils
 
 class Settings:

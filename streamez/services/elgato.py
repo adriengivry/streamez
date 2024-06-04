@@ -1,4 +1,5 @@
 import asyncio
+
 from elgato import Elgato, State
 
 from streamez.logging import Log
