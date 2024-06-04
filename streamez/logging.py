@@ -1,6 +1,6 @@
 from enum import Enum
 
-from streamez.settings import AppSettings
+from streamez.settings import Settings
 from PySide6.QtWidgets import QMessageBox
 
 class Log:
@@ -15,6 +15,6 @@ class Log:
     @staticmethod
     def error(message: str):
         print(f"Error: {message}")
-        if AppSettings.show_message_box_on_error:
-            QMessageBox.information(None, "Error", message)
+        if Settings.get("show_message_box_on_error"):
+            QMessageBox.critical(None, "Error", message)
         

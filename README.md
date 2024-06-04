@@ -14,7 +14,6 @@ Includes 3 services:
 Easy to expand to include your own services!
 
 # Roadmap
-- Implement a proper configuration system that wouldn't require to edit Python files directly
 - Add a profile system to switch between different configurations (example: meeting mode, streaming mode)
 
 # Installation
@@ -24,15 +23,54 @@ cd streamez/
 python -m pip install .
 ```
 
-# Configuration
-Open `streamez/settings.py` and edit it to adapt *streamez* to your setup!
+# Running
+```bash
+python -m streamez
+```
 
-You might want to:
-- Define the IP address of your own Philips Hue bridge
-- Define the name and desired settings for your Philips Hue lights
-- Define the IP address of your Elgato lights
-- Define the IP address and desired settings for your Elgato lights
-- Adjust OBS Studio path and command line arguments to meet your requirements
+# Configuration
+1. Start the application
+2. Locate Streamez's REC icon (red circle) in your system tray
+3. Right-click on the icon
+4. Select "Open Settings"
+5. Add your settings based on your use case
+6. Right-click on the icon
+7. Select "Reload Settings"
+
+**Note: If no setting override is provided for a particular entry (example: "hue_bridge_address"), the default settings will be used!**
+
+**Example settings:** *Turn on 2 Elgato lights and update the settings of 2 Philips Hue lights, and start OBS Studio minimized with the virtual camera option:*
+```json
+{
+    "elgato_lights": [
+        {"address": "192.168.2.38", "state": true},
+        {"address": "192.168.2.21", "state": true}
+    ],
+    "hue_lights": [
+        {"name": "Office Floor", "on": true, "brightness": 254, "hue": 38146, "saturation": 7},
+        {"name": "Hue go", "on": true, "brightness": 254, "hue": 38146, "saturation": 7}
+    ],
+    "hue_bridge_address": "192.168.2.14",
+    "obs_args": [
+        "--startvirtualcam", "--scene", "Default", "--minimize-to-tray", "--disable-shutdown-check", "--disable-updater"
+    ]
+}
+```
+
+**Default settings:**
+```json
+{
+  "auto_initialize_on_service_start" : true,
+  "show_message_box_on_error": true,
+  "obs_folder": "C:\\Program Files\\obs-studio\\bin\\64bit",
+  "obs_executable_name": "obs64.exe",
+  "obs_args": [],
+  "elgato_lights": [],
+  "hue_bridge_address": null,
+  "hue_lights": []
+}
+```
+
 
 # Creating a Shortcut (Windows)
 To create a shortcut for streamez that can be accessed by typing "streamez" in the Windows search menu, follow these steps:

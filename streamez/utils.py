@@ -8,6 +8,10 @@ class ServiceManagerState(Enum):
     
 class Utils:
     @staticmethod
+    def get_appdata_path():
+        return os.path.join(os.getenv('APPDATA'), 'streamez')
+    
+    @staticmethod
     def get_bundle_dir():
         return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
