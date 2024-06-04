@@ -7,7 +7,8 @@ class Settings:
     user_settings = dict()
 
     default_settings = {
-        "auto_initialize_on_service_start" : True,
+        "auto_reload_settings_on_initialization": True,
+        "auto_initialize_on_service_start": True,
         "show_message_box_on_error": True,
         "obs_folder": os.path.join("C:", os.sep, "Program Files", "obs-studio", "bin", "64bit"),
         "obs_executable_name": "obs64.exe",

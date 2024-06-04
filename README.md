@@ -34,8 +34,6 @@ python -m streamez
 3. Right-click on the icon
 4. Select "Open Settings"
 5. Add your settings based on your use case
-6. Right-click on the icon
-7. Select "Reload Settings"
 
 **Note: If no setting override is provided for a particular entry (example: "hue_bridge_address"), the default settings will be used!**
 
@@ -60,7 +58,8 @@ python -m streamez
 **Default settings:**
 ```json
 {
-  "auto_initialize_on_service_start" : true,
+  "auto_reload_settings_on_initialization": true,
+  "auto_initialize_on_service_start": true,
   "show_message_box_on_error": true,
   "obs_folder": "C:\\Program Files\\obs-studio\\bin\\64bit",
   "obs_executable_name": "obs64.exe",

@@ -22,8 +22,11 @@ class Application:
         Settings.load_user_settings()
         self.state = ServiceManagerState.NONE
 
-    def initialize(self) -> bool:
+    def initialize(self) -> bool:        
         assert self.state != ServiceManagerState.RUNNING, "Cannot initialize services while they are currently running!"
+
+        if Settings.get("auto_reload_settings_on_initialization"):
+            Settings.load_user_settings()
 
         for service in self.services:
             if not service.should_skip() and not service.initialize():
